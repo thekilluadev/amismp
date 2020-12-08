@@ -28,8 +28,8 @@ client.on("message", (message) => {
         message.channel.send(`🏓 Latency is ${Date.now() - message.createdTimestamp}ms. API Latency is ${Math.round(client.ws.ping)}ms`);
     } else
     if (command === 'embedsay') {
-        let channel = message.mentions.channels.first();
         let message = args.slice(1).join(" ");
+        let channel = message.mentions.channels.first();
         const embed = new Discord.MessageEmbed()
             .setTitle(`New Message from ${message.author.name}`)
             .setAuthor(`${message.author.username}`, `${message.author.icon_url}`)
@@ -37,7 +37,12 @@ client.on("message", (message) => {
             .setDescription(`${message}`)
             .setThumbnail("http://i.imgur.com/p2qNFag.png")
             .setTimestamp()
-        message.channel.send(embed);
+        msg.guild.channels.cache.find(i => i.name === channel).send(embed)
+    } else
+    if(command === "say"){
+        let text = args.join(" ");
+        message.delete();
+        message.channel.send(text);
     }
 });
 
