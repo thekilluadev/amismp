@@ -9,8 +9,12 @@ client.on("ready", () => {
     console.log(chalk.magenta("Starting up..."));
     setTimeout(function(){
         console.log(chalk.magenta('Ami SMP bot made by ty-schnoor'));
+        console.log(chalk.magenta("https://github.com/ty-schnoor/anismp/"));
+            setTimeout(function(){
+            console.log(chalk.magenta('Started up!'));
+            },500);
     },500);
-    console.log(chalk.magenta("https://github.com/ty-schnoor/anismp/"));
+
 });
 
 client.on("message", (message) => {
