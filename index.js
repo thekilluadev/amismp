@@ -18,14 +18,26 @@ client.on("ready", () => {
 });
 
 client.on("message", (message) => {
-    // Exit and stop if the prefix is not there or if user is a bot
-    if (!message.content.startsWith(config.prefix) || message.author.bot) return;
+    if (message.author.bot) return;
+    if (message.content.indexOf(config.prefix) !== 0) return;
 
-    if (message.content.startsWith(config.prefix + "ping")) {
-        message.channel.send("pong!");
+    const args = message.content.slice(prefix.length).trim().split(/ +/g);
+    const command = args.shift().toLowerCase();
+
+    if (command === 'ping') {
+        message.channel.send(`🏓 Latency is ${Date.now() - message.createdTimestamp}ms. API Latency is ${Math.round(client.ws.ping)}ms`);
     } else
-    if (message.content.startsWith(config.prefix + "foo")) {
-        message.channel.send(`🏓Latency is ${Date.now() - message.createdTimestamp}ms. API Latency is ${Math.round(client.ws.ping)}ms`);
+    if (command === 'embedsay') {
+        let channel = message.mentions.channels.first();
+        let message = args.slice(1).join(" ");
+        const embed = new Discord.MessageEmbed()
+            .setTitle(`New Message from ${message.author.name}`)
+            .setAuthor(`${message.author.username}`, `${message.author.icon_url}`)
+            .setColor(fffff)
+            .setDescription(`${message}`)
+            .setThumbnail("http://i.imgur.com/p2qNFag.png")
+            .setTimestamp()
+        message.channel.send(embed);
     }
 });
 
