@@ -28,15 +28,15 @@ client.on("message", (message) => {
         message.channel.send(`🏓 Latency is ${Date.now() - message.createdTimestamp}ms. API Latency is ${Math.round(client.ws.ping)}ms`);
     } else
     if (command === 'embedsay') {
-        let message = args.slice(1).join(" ");
+        let messagecontent = args.slice(1).join(" ");
         let channel = args[0];
         let user = message.author
         const embed = new Discord.MessageEmbed()
             .setTitle(`New Message from ${message.author}`)
             .setAuthor(`${message.author}`, `${message.author.displayAvatarURL()}`)
             // .setColor(#fffff)
-            .setDescription(`${message}`)
-            .setThumbnail(message.author.displayAvatarURL())
+            .setDescription(`${messagecontent}`)
+            .setThumbnail(`${message.author.displayAvatarURL()}`)
             .setTimestamp()
         client.channels.cache.get(channel).send(embed);
     } else
@@ -44,18 +44,18 @@ client.on("message", (message) => {
         let text = args.join(" ");
         message.delete();
         message.channel.send(text);
-    } else
-    if (command === "announce" {
+    } /* else
+     if (command === "announce" {
         let message = args.slice(1).join(" ");
         const embed = new Discord.MessageEmbed()
             .setTitle(`New Announcement from ${message.author.name}`)
             .setAuthor(`${message.author.username}`, `${message.author.iron_url}`)
             .setColor(fffff)
-            .setDescription(`${message})
+            .setDescription(`${message}`)
             .setThumbnail("https://i.imgur.com/")
             .setTimestamp()
         msg.guild.channels.cache.find(i => i.name === "announcements").send(embed)
-    }
+    } */
 });
 
 client.login(tokenfile.token);
