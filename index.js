@@ -29,15 +29,16 @@ client.on("message", (message) => {
     } else
     if (command === 'embedsay') {
         let message = args.slice(1).join(" ");
-        let channel = message.mentions.channels.first();
+        let channel = args[0];
+        let user = message.author
         const embed = new Discord.MessageEmbed()
-            .setTitle(`New Message from ${message.author.name}`)
-            .setAuthor(`${message.author.username}`, `${message.author.icon_url}`)
-            .setColor(fffff)
+            .setTitle(`New Message from ${message.author}`)
+            .setAuthor(`${message.author}`, `${message.author.displayAvatarURL()}`)
+            // .setColor(#fffff)
             .setDescription(`${message}`)
-            .setThumbnail("http://i.imgur.com/p2qNFag.png")
+            .setThumbnail(message.author.displayAvatarURL())
             .setTimestamp()
-        msg.guild.channels.cache.find(i => i.name === channel).send(embed)
+        client.channels.cache.get(channel).send(embed);
     } else
     if(command === "say"){
         let text = args.join(" ");
