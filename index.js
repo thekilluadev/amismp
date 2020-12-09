@@ -43,6 +43,17 @@ client.on("message", (message) => {
         let text = args.join(" ");
         message.delete();
         message.channel.send(text);
+    } else
+    if (command === "announce" {
+        let message = args.slice(1).join(" ");
+        const embed = new Discord.MessageEmbed()
+            .setTitle(`New Announcement from ${message.author.name}`)
+            .setAuthor(`${message.author.username}`, `${message.author.iron_url}`)
+            .setColor(fffff)
+            .setDescription(`${message})
+            .setThumbnail("https://i.imgur.com/")
+            .setTimestamp()
+        msg.guild.channels.cache.find(i => i.name === "announcements").send(embed)
     }
 });
 
