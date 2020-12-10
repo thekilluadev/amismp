@@ -19,13 +19,14 @@ client.on("ready", () => {
 
 client.on("ready", () => {
     client.user.setPresence({
-        game: {
+        activity: { 
             name: `over ${client.guilds.cache.size} members.`,
             type: 'WATCHING'
         },
         status: 'idle'
     })
 })
+
 
 client.on("message", (message) => {
     if (message.author.bot) return;
