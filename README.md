@@ -9,7 +9,7 @@ wait for it all to install, then create a file like so, named `token.json`
 ```js
 {
   "token": "INSERT-TOKEN-HERE"
- }
+}
  ```
 then run:
 ```cmd
