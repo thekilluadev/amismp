@@ -29,18 +29,18 @@ client.on("message", (message) => {
     } else
     if (command === 'embedsay') {
         let messagecontent = args.slice(1).join(" ");
-        let channel = args[0];
+        let sendchannel = args[0];
         let user = message.author
         const embed = new Discord.MessageEmbed()
-            .setTitle(`New Message from ${message.author}`)
-            .setAuthor(`${message.author}`, `${message.author.displayAvatarURL()}`)
+            .setTitle(`New Message from ${message.author.username}`)
+            .setAuthor(`${message.author.username}`, `${message.author.displayAvatarURL()}`)
             // .setColor(#fffff)
             .setDescription(`${messagecontent}`)
             .setThumbnail(`${message.author.displayAvatarURL()}`)
             .setTimestamp()
-        message.channel.send(channel);
-        // client.channels.cache.get(`${channel}`).send(embed);
-        console.log(chalk.magenta(`Embed sent in ${channel} by ${user}.`))
+        message.channel.send(sendchannel);
+        // client.channels.cache.get(`${sendchannel}`).send(embed);
+        console.log(chalk.magenta(`Embed sent in ${sendchannel} by ${message.author.username}.`))
     } else
     if(command === "say"){
         let text = args.join(" ");
