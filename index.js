@@ -38,7 +38,9 @@ client.on("message", (message) => {
             .setDescription(`${messagecontent}`)
             .setThumbnail(`${message.author.displayAvatarURL()}`)
             .setTimestamp()
-        client.channels.cache.get(channel).send(embed);
+        message.channel.send(channel);
+        // client.channels.cache.get(`${channel}`).send(embed);
+        console.log(chalk.magenta(`Embed sent in ${channel} by ${user}.`))
     } else
     if(command === "say"){
         let text = args.join(" ");
