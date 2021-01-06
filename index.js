@@ -8,8 +8,8 @@ const tokenfile = require("./token.json");
 client.on("ready", () => {
     console.log(chalk.magenta("Starting up..."));
     setTimeout(function(){
-        console.log(chalk.magenta('Ami SMP bot made by ty-schnoor'));
-        console.log(chalk.magenta("https://github.com/ty-schnoor/amismp/"));
+        console.log(chalk.magenta('Ami SMP bot made by thekilluadev'));
+        console.log(chalk.magenta("https://github.com/thekilluadev/amismp/"));
             setTimeout(function(){
             console.log(chalk.magenta('Started up!'));
             },500);
@@ -100,7 +100,7 @@ client.on("message", (message) => {
      if (command === "help") {
          const embed = new Discord.MessageEmbed()
              .setTitle("Ami SMP Bot Help Menu")
-             .setAuthor(`made by hope#9727`, `https://cdn.discordapp.com/avatars/689872732649029668/6487c177036255316d22893002f52858.webp`)
+             .setAuthor(`made by killua#5353`, `https://cdn.discordapp.com/avatars/689872732649029668/6487c177036255316d22893002f52858.webp`)
              .addFields({ name: "!!ping", value: "Show the connection to the discord servers. \nUsage: !!ping"})
              .addFields({ name: "!!say", value: "Talk as the bot, because why not. \nUsage: !!say <message> \nLimited to Moderators and above."})
              .addFields({ name: "!!embedsay", value: "Talk as the bot, but fancier. \nUsage: !!embedsay <channelid> <message> \nLimited to Moderators and above."})
