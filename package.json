@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ty-schnoor/anismp.git"
+    "url": "git+https://github.com/thekilluadev/anismp.git"
   },
-  "author": "ty-schnoor",
+  "author": "thekilluadev",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ty-schnoor/anismp/issues"
+    "url": "https://github.com/thekilluadev/anismp/issues"
   },
-  "homepage": "https://github.com/ty-schnoor/anismp#readme",
+  "homepage": "https://github.com/thekilluadev/anismp#readme",
   "dependencies": {
     "chalk": "^4.1.0",
     "discord.js": "^12.5.1"
