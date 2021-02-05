@@ -52,7 +52,7 @@ client.on("message", (message) => {
             client.channels.cache.get(`${sendchannel}`).send(embed);
             console.log(chalk.blue(`Embed sent in ${sendchannel} by ${message.author.username}.`))
         } else {
-            message.channel.send('yea so uh you don\'t have perms to use that lol')
+            message.channel.send('yea so uh you don\'t have perms to use that lol. sucks to be you :rolling_eyes:')
         }
     } else
     if(command === "say"){
@@ -78,7 +78,7 @@ client.on("message", (message) => {
          client.channels.cache.get(`729379082344595466`).send(embed);
          console.log(chalk.blue(`Public announcement sent by ${message.author.username}.`))
          } else {
-             message.channel.send('yea so uh you don\'t have perms to use that lol')
+             message.channel.send('yea so uh you don\'t have perms to use that lol. sucks to be you :rolling_eyes:')
          }
     } else
      if (command === "announceprivate") {
@@ -94,7 +94,7 @@ client.on("message", (message) => {
              client.channels.cache.get(`722887365441486859`).send(embed);
          console.log(chalk.blue(`Private announcement sent by ${message.author.username}.`))
          } else {
-             message.channel.send('yea so uh you don\'t have perms to use that lol')
+             message.channel.send('yea so uh you don\'t have perms to use that lol. sucks to be you :rolling_eyes:')
          }
      } else
      if (command === "help") {
