@@ -80,6 +80,24 @@ client.on("message", (message) => {
              message.channel.send('yea so uh you don\'t have perms to use that lol. sucks to be you :rolling_eyes:')
          }
      } else
+     if (command === "announceprivatehere") {
+         let modrole = message.guild.roles.cache.get("676048227056877588");
+         let messagecontent = args.slice(0).join(" ");
+         const embed = new Discord.MessageEmbed()
+             .setTitle(`New Announcement`)
+             .setAuthor(`${message.author.username}`, `${message.author.displayAvatarURL()}`)
+             // .setColor(#fffff)
+             .setDescription(`${messagecontent}`)
+             .setTimestamp()
+         if(message.member.roles.cache.some(r=>["Moderator", "hope"].includes(r.name)) ) {
+             client.channels.cache.get(`722887365441486859`).send("@here");
+             message.delete();
+             client.channels.cache.get(`722887365441486859`).send(embed);
+         console.log(chalk.blue(`Private announcement sent by ${message.author.username}.`))
+         } else {
+             message.channel.send('yea so uh you don\'t have perms to use that lol. sucks to be you :rolling_eyes:')
+         }
+     } else
      if (command === "help") {
          const embed = new Discord.MessageEmbed()
              .setTitle("Ami SMP Bot Help Menu")
