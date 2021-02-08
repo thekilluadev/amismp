@@ -91,7 +91,7 @@ client.on("message", (message) => {
              .setTimestamp()
          if(message.member.roles.cache.some(r=>["Moderator", "hope"].includes(r.name)) ) {
              client.channels.cache.get(`722887365441486859`).send("@here");
-             message.delete();
+             client.channels.cache.get(`722887365441486859`).bulkdelete(1);
              client.channels.cache.get(`722887365441486859`).send(embed);
          console.log(chalk.blue(`Private announcement sent by ${message.author.username}.`))
          } else {
