@@ -38,23 +38,6 @@ client.on("message", (message) => {
     if (command === 'ping') {
         message.channel.send(`🏓 Latency is ${Date.now() - message.createdTimestamp}ms. API Latency is ${Math.round(client.ws.ping)}ms`);
     } else
-    if (command === 'embedsay') {
-        let modrole = message.guild.roles.cache.get("676048227056877588");
-        let messagecontent = args.slice(1).join(" ");
-        let sendchannel = args[0];
-        const embed = new Discord.MessageEmbed()
-            .setTitle(`New Message`)
-            .setAuthor(`${message.author.nickname}`, `${message.author.displayAvatarURL()}`)
-            .setColor(#F8750E)
-            .setDescription(`${messagecontent}`)
-            .setTimestamp()
-        if(message.member.roles.cache.some(r=>["Moderator", "hope"].includes(r.name)) ) {
-            client.channels.cache.get(`${sendchannel}`).send(embed);
-            console.log(chalk.blue(`Embed sent in ${sendchannel} by ${message.author.username}.`))
-        } else {
-            message.channel.send('yea so uh you don\'t have perms to use that lol. sucks to be you :rolling_eyes:')
-        }
-    } else
     if(command === "say"){
         let modrole = message.guild.roles.cache.get("676048227056877588");
         let text = args.join(" ");
