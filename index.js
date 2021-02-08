@@ -53,8 +53,8 @@ client.on("message", (message) => {
          let messagecontent = args.slice(0).join(" ");
          const embed = new Discord.MessageEmbed()
              .setTitle(`New Announcement`)
-             .setAuthor(`${message.author.nickname}`, `${message.author.displayAvatarURL()}`)
-             .setColor(#F8750E)
+             .setAuthor(`${message.member.nickname}`, `${message.author.displayAvatarURL()}`)
+             .setColor('#F8750E')
              .setDescription(`${messagecontent}`)
              .setTimestamp()
          if(message.member.roles.cache.some(r=>["Moderator", "hope"].includes(r.name)) ) {
@@ -69,8 +69,8 @@ client.on("message", (message) => {
          let messagecontent = args.slice(0).join(" ");
          const embed = new Discord.MessageEmbed()
              .setTitle(`New Announcement`)
-             .setAuthor(`${message.author.username}`, `${message.author.displayAvatarURL()}`)
-             // .setColor(#fffff)
+             .setAuthor(`${message.memmber.username}`, `${message.author.displayAvatarURL()}`)
+             .setColor('#F8750E')
              .setDescription(`${messagecontent}`)
              .setTimestamp()
          if(message.member.roles.cache.some(r=>["Moderator", "hope"].includes(r.name)) ) {
@@ -85,8 +85,8 @@ client.on("message", (message) => {
          let messagecontent = args.slice(0).join(" ");
          const embed = new Discord.MessageEmbed()
              .setTitle(`New Announcement`)
-             .setAuthor(`${message.author.username}`, `${message.author.displayAvatarURL()}`)
-             // .setColor(#fffff)
+             .setAuthor(`${message.member.username}`, `${message.author.displayAvatarURL()}`)
+             .setColor('#F8750E')
              .setDescription(`${messagecontent}`)
              .setTimestamp()
          if(message.member.roles.cache.some(r=>["Moderator", "hope"].includes(r.name)) ) {
@@ -101,6 +101,7 @@ client.on("message", (message) => {
      if (command === "help") {
          const embed = new Discord.MessageEmbed()
              .setTitle("Ami SMP Bot Help Menu")
+             .setColor('#F8750E')
              .setAuthor(`made by killua#5229`, `https://images-ext-2.discordapp.net/external/l-sha64PNwRjeA6ioKk9VVUrZQeU1e2GEWfKtxd31c0/%3Fsize%3D256/https/cdn.discordapp.com/avatars/689872732649029668/ac9bd95cfa1cd43ad0c25f1b4877d9ee.png`)
              .addFields({ name: "!!ping", value: "Show the connection to the discord servers. \nUsage: !!ping"})
              .addFields({ name: "!!say", value: "Talk as the bot, because why not. \nUsage: !!say <message> \nLimited to Moderators and above."})
