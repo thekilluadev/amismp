@@ -69,7 +69,7 @@ client.on("message", (message) => {
          let messagecontent = args.slice(0).join(" ");
          const embed = new Discord.MessageEmbed()
              .setTitle(`New Announcement`)
-             .setAuthor(`${message.memmber.username}`, `${message.author.displayAvatarURL()}`)
+             .setAuthor(`${message.member.nickname}`, `${message.author.displayAvatarURL()}`)
              .setColor('#F8750E')
              .setDescription(`${messagecontent}`)
              .setTimestamp()
@@ -85,15 +85,14 @@ client.on("message", (message) => {
          let messagecontent = args.slice(0).join(" ");
          const embed = new Discord.MessageEmbed()
              .setTitle(`New Announcement`)
-             .setAuthor(`${message.member.username}`, `${message.author.displayAvatarURL()}`)
+             .setAuthor(`${message.member.nickname}`, `${message.author.displayAvatarURL()}`)
              .setColor('#F8750E')
              .setDescription(`${messagecontent}`)
              .setTimestamp()
          if(message.member.roles.cache.some(r=>["Moderator", "hope"].includes(r.name)) ) {
              client.channels.cache.get(`722887365441486859`).send("@here");
-             client.channels.cache.get(`722887365441486859`).messages.fetch({ limit: 1 }) .then(m => {
-                m.forEach(msg => msg.delete());
-             });
+             client.channels.cache.get(`722887365441486859`).messages.fetch({ linit: 1 }) .then(m => {
+		m.forEach(msg => msg.delete()); });
              client.channels.cache.get(`722887365441486859`).send(embed);
          console.log(chalk.blue(`Private announcement sent by ${message.author.username}.`))
          } else {
