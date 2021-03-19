@@ -8,8 +8,8 @@ const tokenfile = require("./token.json");
 client.on("ready", () => {
     console.log(chalk.magenta("Starting up..."));
     setTimeout(function(){
-        console.log(chalk.magenta('Ami SMP bot made by thekilluadev'));
-        console.log(chalk.magenta("https://github.com/thekilluadev/amismp/"));
+        console.log(chalk.magenta('Ami SMP bot made by ash-development'));
+        console.log(chalk.magenta("https://github.com/ash-development/amismp/"));
             setTimeout(function(){
             console.log(chalk.magenta('Started up!'));
             },500);
